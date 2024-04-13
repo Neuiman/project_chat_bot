@@ -1,13 +1,19 @@
 import asyncio
 import logging
 
-from aiogram import Bot, Dispatcher, F 
-from config import TOKEN
+from aiogram import Bot, Dispatcher, F
 from app.handlers import router
+import os
+from dotenv import load_dotenv
 
 
-bot = Bot(token=TOKEN)
+
+load_dotenv()
+bot = Bot(token=os.getenv('TOKEN'))
 db = Dispatcher()
+
+
+
 
 
 async def main():
